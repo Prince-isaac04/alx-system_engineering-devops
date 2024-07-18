@@ -6,14 +6,14 @@ sudo apt-get -y install haproxy
 
 # the load balancer's configuration
 echo "
-backend app
-        balance roundrobin
-        server 491578-web-01 54.157.178.17 check
-        server 491578-web-02 100.25.10.43 check
-
 frontend webprince
         bind *:80
         mode http
-        default_backend app"  >> /etc/haproxy/haproxy.cfg
+        default_backend app
+
+backend app
+        balance roundrobin
+        server 491578-web-01 54.157.178.17 check
+        server 491578-web-02 100.25.10.43 check"  >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
