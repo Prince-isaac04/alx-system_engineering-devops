@@ -1,0 +1,22 @@
+echo "updating pakages"
+sudo apt-get update
+sudo apt-get install -y nginx
+#install pip
+sudo apt-get install -y python3-pip
+
+#install flask
+pip install flask
+pip install flask_cors
+pip install sqlalchemy
+
+#install net tool
+sudo apt-get install -y net-tools
+#remove any airnb directory
+rm -rf AirBnB_v*
+
+#clone repository
+git clone https://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@github.com/Prince-isaac04/AirBnB_clone_v2.git
+git clone https://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@github.com/Prince-isaac04/AirBnB_clone_v4.git
+
+#change directory
+cd AirBnB_clone_v2
